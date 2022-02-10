@@ -84,6 +84,7 @@ player.on('trackStart', (queue, track) => {
 })
 
 player.on('queueEnd', (queue) => {
+  queue.metadata.send('Queue has ended.');
   client.user.setPresence({
     activities: [{
       name: 'Music',
