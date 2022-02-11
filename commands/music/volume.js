@@ -12,7 +12,7 @@ module.exports = {
 
     if (args[0].startsWith('+') || args[0].startsWith('-')) {
       const relVol = parseInt(args[0].substr(1));
-      const success = queue.setVolume(queue.volume + toAdd);
+      const success = queue.setVolume(queue.volume + reVol);
       return message.channel.send(success ? `Volume changed: **${vol}**/**${maxVol}**` : 'Something went wrong.');
     } else {
       const vol = parseInt(args[0]);
