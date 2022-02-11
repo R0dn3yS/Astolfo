@@ -11,7 +11,7 @@ module.exports = {
     if (!args) return message.channel.send(`Current volume: **${queue.volume}**\n**To change the volume, Type a number between \`1\` and \`${maxVol}\`.`);
 
     if (args[0].startsWith('+') || args[0].startsWith('-')) {
-      const relVol = parseInt(args[0].substr(1));
+      const relVol = parseInt(args[0]);
       const success = queue.setVolume(queue.volume + relVol);
       return message.channel.send(success ? `Volume changed: **${queue.volume}**/**${maxVol}**` : 'Something went wrong.');
     } else {
